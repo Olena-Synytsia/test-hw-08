@@ -19,7 +19,7 @@ const ContactList = () => {
               name={contact.name}
               number={contact.number}
               id={contact.id}
-              onDelete={() => handleDeleteContact(contact.id)}
+              handleDeleteContact={handleDeleteContact}
             />
           </li>
         ))}

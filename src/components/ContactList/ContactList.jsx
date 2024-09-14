@@ -1,15 +1,7 @@
-import { useState } from "react";
 import Contact from "../Contact/Contact";
-import contactsData from "../../UserData/contacts.json";
 import s from "./ContactList.module.css";
 
-const ContactList = () => {
-  const [contacts, setContacts] = useState(contactsData);
-
-  const handleDeleteContact = (id) => {
-    setContacts((prev) => prev.filter((item) => item.id !== id));
-  };
-
+const ContactList = ({ contacts, handleDeleteContact }) => {
   return (
     <div className={s.container}>
       <ul className={s.element}>

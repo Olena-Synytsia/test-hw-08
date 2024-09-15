@@ -13,9 +13,18 @@ const App = () => {
 
   const [contacts, setContacts] = useState(contactsData);
 
+  // const [contacts, setContacts] = useState(() => {
+  //   const savedContacts = window.localStorage.getItem("contacts");
+  //   return savedContacts ? JSON.parse(savedContacts) : [];
+  // });
+
   useEffect(() => {
     window.localStorage.setItem("filter", JSON.stringify(filter));
   }, [filter]);
+
+  useEffect(() => {
+    window.localStorage.setItem("contacts", JSON.stringify(contacts));
+  }, [contacts]);
 
   const handleFilterChange = (value) => {
     setFilter(value);
@@ -23,6 +32,8 @@ const App = () => {
 
   const handleDeleteContact = (id) => {
     setContacts((prev) => prev.filter((contact) => contact.id !== id));
+    setFilter("");
+    return setContacts;
   };
 
   const filteredContacts = contacts.filter((contact) =>

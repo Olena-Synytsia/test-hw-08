@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import ContactForm from "./components/ContactForm/ContactForm";
 import SearchBox from "./components/SearchBox/SearchBox";
 import ContactList from "./components/ContactList/ContactList";
-import contactsData from "./UserData/contacts.json";
 import "./App.css";
 
 const App = () => {
@@ -11,16 +10,10 @@ const App = () => {
     return searchName ? JSON.parse(searchName) : "";
   });
 
-  const [contacts, setContacts] = useState(contactsData);
-
-  // const [contacts, setContacts] = useState(() => {
-  //   const savedContacts = window.localStorage.getItem("contacts");
-  //   return savedContacts ? JSON.parse(savedContacts) : [];
-  // });
-
-  const handleAddContact = (newContact) => {
-    setContacts((prevContacts) => [...prevContacts, newContact]);
-  };
+  const [contacts, setContacts] = useState(() => {
+    const savedContacts = window.localStorage.getItem("contacts");
+    return savedContacts ? JSON.parse(savedContacts) : [];
+  });
 
   useEffect(() => {
     window.localStorage.setItem("filter", JSON.stringify(filter));
@@ -29,6 +22,15 @@ const App = () => {
   useEffect(() => {
     window.localStorage.setItem("contacts", JSON.stringify(contacts));
   }, [contacts]);
+
+  const handleAddContact = (newContact) => {
+    setContacts((prevContacts) => {
+      const updatedContacts = [...prevContacts, newContact];
+
+      window.localStorage.setItem("contacts", JSON.stringify(updatedContacts));
+      return updatedContacts;
+    });
+  };
 
   const handleFilterChange = (value) => {
     setFilter(value);

@@ -6,13 +6,14 @@ const SearchBox = ({ searchValue, onSearchChange }) => {
   };
   return (
     <div className={s.container}>
-      <label htmlFor="searchInput">
-        <span>Find contacts by name</span>
+      <label htmlFor="searchInput" className={s.label}>
+        <span className={s.span}>Find contacts by name</span>
         <input
           type="text"
           id="searchInput"
           value={searchValue}
           onChange={handleChange}
+          className={s.input}
         />
       </label>
     </div>

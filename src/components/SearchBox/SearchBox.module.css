@@ -1,2 +1,33 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
+  width: 346px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.input {
+  width: 336px;
+  border: 2px solid teal;
+  border-radius: 4px;
+  box-shadow: 0 0 1px 1px rgb(2, 203, 203);
+  margin-bottom: 10px;
+  padding: 4px;
+}
+
+.input:focus {
+  border: 1px solid rgb(4, 243, 111);
+  outline: none;
+}
+
+.span {
+  margin-bottom: 8px;
 }

@@ -18,6 +18,10 @@ const App = () => {
   //   return savedContacts ? JSON.parse(savedContacts) : [];
   // });
 
+  const handleAddContact = (newContact) => {
+    setContacts((prevContacts) => [...prevContacts, newContact]);
+  };
+
   useEffect(() => {
     window.localStorage.setItem("filter", JSON.stringify(filter));
   }, [filter]);
@@ -43,7 +47,7 @@ const App = () => {
   return (
     <div>
       <h1>Phonebook</h1>
-      <ContactForm />
+      <ContactForm onAddContact={handleAddContact} />
       <SearchBox searchValue={filter} onSearchChange={handleFilterChange} />
       <ContactList
         contacts={filteredContacts}

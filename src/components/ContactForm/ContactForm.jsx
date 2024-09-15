@@ -1,21 +1,42 @@
-import { Field, Form, Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
+import { nanoid } from "nanoid";
+import * as Yup from "yup";
 import s from "./ContactForm.module.css";
-// import { number } from "yup";
 
-const ContactForm = () => {
+const ContactForm = ({ onAddContact }) => {
   const initialValues = {
     name: "",
     number: "",
   };
 
   const handleSubmit = (values, options) => {
-    console.log("SRART");
-    console.log(values);
+    const newContact = {
+      id: nanoid(),
+      name: values.name,
+      number: values.number,
+    };
+
+    onAddContact(newContact);
     options.resetForm();
+
+    console.log(newContact);
   };
+
+  const orderSchema = Yup.object().shape({
+    name: Yup.string().min(3).max(50).required("required field"),
+    number: Yup.string()
+      .min(7)
+      .max(12)
+      .required("required field")
+      .matches(/^[0-9]+$/, "Phone number must contain only digits"),
+  });
   return (
     <div className={s.container}>
-      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validationSchema={orderSchema}
+      >
         <Form className={s.form}>
           <label className={s.label}>
             <span className={s.span}>Name</span>
@@ -24,6 +45,7 @@ const ContactForm = () => {
               className={s.input}
               placeholder="Enter your name"
             ></Field>
+            <ErrorMessage name="name" component="span" className={s.error} />
           </label>
           <label className={s.label}>
             <span className={s.span}>Number</span>
@@ -32,6 +54,7 @@ const ContactForm = () => {
               className={s.input}
               placeholder="Enter your phone number"
             ></Field>
+            <ErrorMessage name="number" component="span" className={s.error} />
           </label>
 
           <button type="submit" className={s.btn}>

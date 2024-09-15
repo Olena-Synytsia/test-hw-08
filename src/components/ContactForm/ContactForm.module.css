@@ -1,2 +1,69 @@
 .container {
+  border: 2px solid teal;
+  border-radius: 8px;
+  display: flex;
+  box-shadow: 0 0 1px 1px rgb(2, 203, 203);
+  background-color: azure;
+  margin: 16px;
+  width: 346px;
+}
+
+.form {
+  padding: 20px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  width: 326px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.span {
+  margin-bottom: 8px;
+}
+
+.input {
+  width: 318px;
+  border: 1px solid teal;
+  border-radius: 4px;
+  box-shadow: 0 0 1px 1px rgb(2, 203, 203);
+  margin-bottom: 10px;
+  padding: 4px;
+}
+
+.input:focus {
+  border-color: mediumseagreen;
+  outline: none;
+}
+
+.btn {
+  width: 140px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px auto;
+  background-color: rgb(94, 209, 209);
+  text-align: center;
+  font-family: Arial, sans-serif;
+  border: none;
+  box-shadow: 0 0 4px 2px rgb(2, 161, 161);
+  transition: background-color 2s ease, color 2s ease;
+  padding: auto;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: rgb(0, 181, 181);
+  color: #fafafa;
+  border: none;
+}
+
+.btn:focus {
+  outline: none;
 }

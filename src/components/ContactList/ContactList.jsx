@@ -1,14 +1,21 @@
 import { useSelector } from "react-redux";
-import { selectContacts } from "../../redux/contactsSlice";
+import { selectFilteredContacts } from "../../redux/contactsSlice";
+import { selectLoading, selectError } from "../../redux/contactsSlice";
 import Contact from "../Contact/Contact";
 import s from "./ContactList.module.css";
 
 const ContactList = () => {
-  const contacts = useSelector(selectContacts);
+  const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
+
+  const filteredContacts = useSelector(selectFilteredContacts);
+
   return (
     <div className={s.container}>
+      {loading && <h2>Loading...</h2>}
+      {error && <h2>Error...</h2>}
       <ul className={s.element}>
-        {contacts.map((contact) => (
+        {filteredContacts.map((contact) => (
           <li className={s.item} key={contact.id}>
             <Contact
               name={contact.name}

@@ -16,7 +16,9 @@ const App = () => {
 
   return (
     <div className="div_app">
-      <h1>Phonebook</h1>
+      <h1 className="title_header">
+        Phone<span className="text_span">Book</span>
+      </h1>
       <ContactForm />
       <SearchBox />
       <ContactList />

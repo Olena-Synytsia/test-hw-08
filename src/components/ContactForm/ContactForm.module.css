@@ -12,7 +12,8 @@
   padding: 20px 10px 10px 10px;
   display: flex;
   flex-direction: column;
-  width: 326px;
+  width: 330px;
+  align-items: center;
 }
 
 .label {
@@ -35,7 +36,7 @@
 }
 
 .input {
-  width: 272px;
+  width: 300px;
   border: 1px solid teal;
   border-radius: 4px;
   box-shadow: 0 0 1px 1px rgb(2, 203, 203);

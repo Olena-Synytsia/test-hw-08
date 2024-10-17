@@ -8,6 +8,7 @@ const AppBar = () => {
     <div>
       <header className={s.appBar_header}>
         <Navigation />
+        {/* {isLoggedIn ? <UserMenu /> : <AuthNav />} */}
         <AuthNav />
       </header>
     </div>

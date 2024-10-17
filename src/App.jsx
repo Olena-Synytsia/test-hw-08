@@ -21,13 +21,13 @@ const App = () => {
     //   </Routes>
     // </Layout>
     <Routes>
-      <Route path="/" element={<Layout />} />
-      <Route path="/" element={<HomePage />} />
-      <Route path="/register " element={<RegistrationPage />} />
-      <Route path="/login " element={<LoginPage />} />
-      <Route path="/contacts " element={<ContactsPage />} />
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="register" element={<RegistrationPage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="contacts" element={<ContactsPage />} />
+      </Route>
       <Route path="*" element={<NotFound />} />
-      <Route />
     </Routes>
   );
 };

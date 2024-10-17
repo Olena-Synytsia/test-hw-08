@@ -9,9 +9,9 @@ const AuthNav = () => {
   return (
     <div className={s.nav}>
       <div className={s.link}>
-        {/* <NavLink className={buildLinkClass} to="/contacts">
+        <NavLink className={buildLinkClass} to="/contacts">
           Contacts
-        </NavLink> */}
+        </NavLink>
         {/* {!isLoggedIn && ()} */}
         <>
           <NavLink className={buildLinkClass} to="/login">

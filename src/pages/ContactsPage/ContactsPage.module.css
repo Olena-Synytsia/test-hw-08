@@ -1,0 +1,19 @@
+h1 {
+  text-align: left;
+  margin-left: 16px;
+}
+
+.title_header {
+  margin-left: 0;
+  font-size: 65px;
+  color: rgb(2, 158, 158);
+  text-shadow: 4px 2px 0 rgba(0, 0, 0, 0.7), 6px 4px 0 rgba(0, 0, 0, 0.5),
+    3px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.text_span {
+  font-size: 65px;
+  color: rgb(255, 174, 23);
+  text-shadow: 4px 2px 0 rgba(0, 0, 0, 0.9), 6px 4px 0 rgba(0, 0, 0, 0.5),
+    3px 3px 0 rgba(0, 0, 0, 0.3);
+}

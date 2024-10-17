@@ -9,7 +9,7 @@
   color: azure;
 }
 
-div button {
+.btn_auth {
   display: flex;
   width: 100px;
   height: 40px;
@@ -18,4 +18,6 @@ div button {
   padding: 10px;
   justify-content: center;
   align-items: center;
+  color: black;
+  background-color: orange;
 }

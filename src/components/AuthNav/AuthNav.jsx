@@ -25,7 +25,7 @@ const AuthNav = () => {
         {/* {isLoggedIn && ()} */}
         <button
           // onClick={() => dispatch(logout())}
-          className="btn btn-secondary"
+          className={s.btn_auth}
         >
           Exit
         </button>

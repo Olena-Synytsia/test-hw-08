@@ -17,6 +17,7 @@ p {
   justify-content: space-between;
   box-shadow: 0 0 1px 1px rgb(2, 203, 203);
   background-color: azure;
+  padding: 10px;
 }
 
 .name {
@@ -30,7 +31,7 @@ p {
 }
 
 .btn {
-  width: auto;
+  width: 100px;
   height: 40px;
   font-size: 16px;
   font-weight: 600;

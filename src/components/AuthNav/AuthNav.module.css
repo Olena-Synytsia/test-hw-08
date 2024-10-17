@@ -1,0 +1,10 @@
+.nav {
+  padding: 20px;
+  font-size: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.link {
+  color: azure;
+}

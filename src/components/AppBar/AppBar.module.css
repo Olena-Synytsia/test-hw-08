@@ -1,6 +1,7 @@
 .appBar_header {
   display: flex;
-  width: 1280px;
+  width: 100%;
+  height: 100%;
   gap: 40px;
   right: 20px;
   top: 20px;

@@ -8,15 +8,17 @@ const NotFound = () => {
   const linkGoBack = stateRef.current ?? "/";
 
   return (
-    <div>
+    <div className={s.wrapper}>
       <img
         src="https://cdn.pixabay.com/photo/2021/07/21/12/49/error-6482984_960_720.png"
         width={1000}
       />
-      <div>Not Found</div>
-      <Link to={linkGoBack} className={s.link_back}>
-        Go back
-      </Link>
+      <div className={s.box}>
+        <div>Not Found</div>
+        <Link to={linkGoBack} className={s.link_back}>
+          Go back
+        </Link>
+      </div>
     </div>
   );
 };

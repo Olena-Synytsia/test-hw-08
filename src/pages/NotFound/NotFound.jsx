@@ -14,7 +14,7 @@ const NotFound = () => {
         width={1000}
       />
       <div className={s.box}>
-        <div>Not Found</div>
+        <div className={s.text}>Not Found</div>
         <Link to={linkGoBack} className={s.link_back}>
           Go back
         </Link>

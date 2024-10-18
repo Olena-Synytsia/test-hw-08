@@ -1,18 +1,18 @@
 .container {
-  border: 2px solid teal;
-  border-radius: 8px;
+  border: 2px solid blueviolet;
+  border-radius: 10px;
   display: flex;
-  box-shadow: 0 0 1px 1px rgb(2, 203, 203);
-  background-color: azure;
-  margin: 16px 16px 20px 16px;
-  width: 350px;
+  box-shadow: 0 0 1px 1px rgb(163, 78, 241);
+  background-color: rgb(149, 0, 248);
+  margin: 20px;
+  width: 400px;
 }
 
 .form {
-  padding: 20px 10px 10px 10px;
+  padding: 20px 10px;
   display: flex;
   flex-direction: column;
-  width: 330px;
+  width: 400px;
   align-items: center;
 }
 
@@ -20,9 +20,12 @@
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   text-align: left;
+  color: white;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
 }
 
 .span {
@@ -31,46 +34,57 @@
 
 .error {
   font-weight: 500;
-  font-size: 12px;
-  color: rgb(4, 243, 111);
+  font-size: 14px;
+  color: white;
 }
 
 .input {
-  width: 300px;
-  border: 1px solid teal;
-  border-radius: 4px;
-  box-shadow: 0 0 1px 1px rgb(2, 203, 203);
+  width: 370px;
+  border: 1px solid blueviolet;
+  border-radius: 6px;
+  box-shadow: 0 0 1px 1px rgb(163, 78, 241);
   margin-bottom: 10px;
   padding: 4px;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+input::placeholder {
+  font-size: 16px;
 }
 
 .input:focus {
-  border-color: rgb(4, 243, 111);
+  border-color: orange;
   outline: none;
 }
 
 .btn {
   width: 140px;
   height: 40px;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
   margin: 10px auto;
-  background-color: rgb(94, 209, 209);
+  background-color: orange;
   text-align: center;
   font-family: Arial, sans-serif;
   border: none;
-  box-shadow: 0 0 4px 2px rgb(2, 161, 161);
+  box-shadow: 0 0 1px 2px rgb(163, 78, 241);
   transition: background-color 2s ease, color 2s ease;
   padding: auto;
+  color: white;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7);
 }
 
 .btn:hover {
   cursor: pointer;
-  background-color: rgb(0, 181, 181);
-  color: #fafafa;
+  background-color: rgb(205, 158, 249);
+  color: black;
   border: none;
+  text-shadow: none;
 }
 
 .btn:focus {
   outline: none;
+  text-shadow: none;
 }

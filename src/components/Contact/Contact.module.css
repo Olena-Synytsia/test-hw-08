@@ -9,19 +9,22 @@ p {
 }
 
 .container {
-  border: 2px solid teal;
+  border: 2px solid blueviolet;
   border-radius: 8px;
   display: flex;
-  width: 350px;
+  width: 398px;
   height: 120px;
   justify-content: space-between;
-  box-shadow: 0 0 1px 1px rgb(2, 203, 203);
-  background-color: azure;
-  padding: 10px;
+  box-shadow: 0 0 1px 1px rgb(163, 78, 241);
+  background-color: rgb(244, 233, 254);
+  padding: 16px;
+  text-align: left;
 }
 
 .name {
   line-height: 1;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .elements {
@@ -33,21 +36,20 @@ p {
 .btn {
   width: 100px;
   height: 40px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
-  margin: auto 10px;
-  background-color: rgb(94, 209, 209);
+  margin: auto 0;
+  background-color: rgb(205, 158, 249);
   text-align: center;
   font-family: Arial, sans-serif;
   border: none;
-  box-shadow: 0 0 4px 2px rgb(2, 161, 161);
+  box-shadow: 0 0 2px 1px rgb(163, 78, 241);
   transition: background-color 2s ease, color 2s ease;
 }
 
 .btn:hover {
   cursor: pointer;
-  background-color: rgb(0, 181, 181);
-  color: #fafafa;
+  background-color: orange;
   border: none;
 }
 
@@ -56,7 +58,7 @@ p {
 }
 
 .icon {
-  min-width: 30px;
-  min-height: 30px;
+  min-width: 36px;
+  min-height: 36px;
   padding-right: 8px;
 }

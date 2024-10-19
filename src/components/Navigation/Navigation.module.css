@@ -7,6 +7,10 @@
   color: azure;
 }
 
-.activeLink:hover {
+.link:hover {
+  color: orange;
+}
+
+.activeLink {
   color: orange;
 }

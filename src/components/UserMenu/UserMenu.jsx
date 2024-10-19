@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import clsx from "clsx";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { selectUser } from "../../redux/auth/selectors.js";
 import { logout } from "../../redux/auth/operations.js";
 import s from "./UserMenu.module.css";
@@ -10,16 +11,22 @@ const UserMenu = () => {
     return clsx(s.link, isActive && s.activeLink);
   };
 
-  const dispatch = useDispatch();
-
   const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    await dispatch(logout());
+    navigate("/login"); // Перенаправляємо на сторінку логіна
+  };
+
   return (
     <div className={s.container}>
       <div className={s.text}>Welcome, {user.name}</div>
       <NavLink className={buildLinkClass} to="/contacts">
         Contacts
       </NavLink>
-      <button onClick={() => dispatch(logout())} className={s.btn}>
+      <button onClick={handleLogout} className={s.btn}>
         Exit
       </button>
     </div>

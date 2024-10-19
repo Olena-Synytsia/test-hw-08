@@ -6,18 +6,13 @@
   display: flex;
   gap: 20px;
   font-size: 40px;
-  color: azure;
+  color: white;
 }
 
-.btn_auth {
-  display: flex;
-  width: 100px;
-  height: 40px;
-  font-size: 20px;
-  margin: 20px;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  background-color: orange;
+.link:hover {
+  color: orange;
+}
+
+.activeLink {
+  color: orange;
 }

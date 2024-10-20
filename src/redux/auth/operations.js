@@ -42,3 +42,12 @@ export const logout = createAsyncThunk("logout", async (_, thunkApi) => {
     return thunkApi.rejectWithValue(error.message);
   }
 });
+
+export const refresh = createAsyncThunk("refresh", async (_, thunkApi) => {
+  try {
+    const { data } = await goitApi.get("/users/current");
+    return data;
+  } catch (error) {
+    return thunkApi.rejectWithValue(error.message);
+  }
+});

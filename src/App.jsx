@@ -1,4 +1,7 @@
 import { Route, Routes } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { refresh } from "./redux/auth/operations.js";
 
 import Layout from "./components/Layout/Layout.jsx";
 import HomePage from "./pages/HomePage/HomePage.jsx";
@@ -10,6 +13,11 @@ import NotFound from "./pages/NotFound/NotFound.jsx";
 import "./App.css";
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refresh());
+  }, [dispatch]);
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

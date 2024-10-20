@@ -17,7 +17,7 @@ const UserMenu = () => {
 
   const handleLogout = async () => {
     await dispatch(logout());
-    navigate("/login"); // Перенаправляємо на сторінку логіна
+    navigate("/login");
   };
 
   return (

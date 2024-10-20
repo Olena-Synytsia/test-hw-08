@@ -1,5 +1,6 @@
 import { Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 import { login } from "../../redux/auth/operations";
 
 const LoginPage = () => {
@@ -9,8 +10,20 @@ const LoginPage = () => {
     password: "",
   };
 
+  // const handleSubmit = (values, options) => {
+  //   dispatch(login(values));
+  //   options.resetForm();
+  // };
+
   const handleSubmit = (values, options) => {
-    dispatch(login(values));
+    dispatch(login(values))
+      .unwrap()
+      .then((res) => {
+        toast(`Welcome, ${res.user.name}!`);
+      })
+      .catch(() => {
+        toast.error("invalid credentials");
+      });
     options.resetForm();
   };
 

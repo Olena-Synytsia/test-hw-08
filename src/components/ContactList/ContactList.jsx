@@ -1,18 +1,34 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
   selectFilteredContacts,
   selectLoading,
   selectError,
 } from "../../redux/contacts/selectors.js";
+import { useEffect } from "react";
+import { fetchContacts } from "../../redux/contacts/operations.js";
 
 import Contact from "../Contact/Contact";
 import s from "./ContactList.module.css";
+import toast from "react-hot-toast";
 
 const ContactList = () => {
+  const dispatch = useDispatch();
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
 
   const filteredContacts = useSelector(selectFilteredContacts);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        await dispatch(fetchContacts());
+      } catch {
+        toast.error("Error fetching contacts:");
+      }
+    };
+
+    fetchData();
+  }, [dispatch]);
 
   return (
     <div className={s.container}>

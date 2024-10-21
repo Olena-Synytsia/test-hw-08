@@ -1,4 +1,4 @@
-export function slideInFromLeft(delay = 0.5) {
+export function slideInFromLeft(delay = 1) {
   return {
     hidden: { x: -100, opacity: 0, scale: 0, rotate: 180 },
     visible: {
@@ -8,7 +8,7 @@ export function slideInFromLeft(delay = 0.5) {
       rotate: 0,
       transition: {
         delay,
-        duration: 0.5,
+        duration: 1,
       },
     },
     exit: {
@@ -18,7 +18,7 @@ export function slideInFromLeft(delay = 0.5) {
   };
 }
 
-export function slideInFromRight(delay = 0.5) {
+export function slideInFromRight(delay = 1) {
   return {
     hidden: { x: 100, opacity: 0 },
     visible: {
@@ -26,7 +26,7 @@ export function slideInFromRight(delay = 0.5) {
       opacity: 1,
       transition: {
         delay,
-        duration: 0.5,
+        duration: 1,
       },
     },
     exit: {
@@ -36,7 +36,7 @@ export function slideInFromRight(delay = 0.5) {
   };
 }
 
-export function slideInFromTop(delay = 0.5) {
+export function slideInFromTop(delay = 1) {
   return {
     hidden: { y: -100, opacity: 0 },
     visible: {
@@ -44,12 +44,12 @@ export function slideInFromTop(delay = 0.5) {
       opacity: 1,
       transition: {
         delay,
-        duration: 0.5,
+        duration: 1,
       },
     },
   };
 }
-export function slideInFromBot(delay = 0.5) {
+export function slideInFromBot(delay = 1) {
   return {
     hidden: { y: 100, opacity: 0 },
     visible: {
@@ -57,7 +57,7 @@ export function slideInFromBot(delay = 0.5) {
       opacity: 1,
       transition: {
         delay,
-        duration: 0.5,
+        duration: 1,
       },
     },
     exit: {
